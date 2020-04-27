@@ -19,7 +19,7 @@ but this hasn't been fixed yet.
 Build Image
 -----------
 
-    $ docker build -t dajobe/hbase .
+    $ docker build -t daunnc/hbase .
 
 
 Pull image
@@ -27,9 +27,9 @@ Pull image
 
 If you want to pull the image already built then use this
 
-    $ docker pull dajobe/hbase
+    $ docker pull daunnc/hbase
 
-More details at https://hub.docker.com/r/dajobe/hbase/
+More details at https://hub.docker.com/r/daunnc/hbase/
 
 
 Run HBase
@@ -38,7 +38,7 @@ Run HBase
 To run HBase by hand:
 
     $ mkdir data
-    $ id=$(docker run --name=hbase-docker -h hbase-docker -d -v $PWD/data:/data dajobe/hbase)
+    $ id=$(docker run --name=hbase-docker -h hbase-docker -d -v $PWD/data:/data daunnc/hbase)
 
 To run it and adjust the host system's locally by editing
 `/etc/hosts` to alias the DNS hostname 'hbase-docker' to the
@@ -129,13 +129,13 @@ use `pip install --user happybase` to get it just for me)
 Test HBase is working from Java
 -------------------------------
 
-    $ docker run --rm -it --link $id:hbase-docker dajobe/hbase hbase shell
+    $ docker run --rm -it --link $id:hbase-docker daunnc/hbase hbase shell
 	HBase Shell
 	Use "help" to get list of supported commands.
 	Use "exit" to quit this interactive shell.
 	For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
-	Version 2.1.2, r1dfc418f77801fbfb59a125756891b9100c1fc6d, Sun Dec 30 21:45:09 PST 2018
-	Took 0.0472 seconds
+	Version 2.2.4, r67779d1a325a4f78a468af3339e73bf075888bac, 2020年 03月 11日 星期三 12:57:39 CST
+	Took 0.0057 seconds
 	hbase(main):001:0> status
 	1 active master, 0 backup masters, 1 servers, 0 dead, 2.0000 average load
 	Took 0.7255 seconds
